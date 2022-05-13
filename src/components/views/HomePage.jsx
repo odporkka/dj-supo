@@ -1,23 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import { listen } from '../../services/micListener';
-import {calculateNewValue} from "@testing-library/user-event/dist/utils";
+import { getNewWordList } from '../../services/transcriptService';
+import YoutubePlayer from "../YoutubePlayer";
 
 const HomePage = (props) => {
-    const [ wordList, setWordList ] = useState([])
+    const [ wordList, setWordList ] = useState({})
     useEffect(() => {
-        listen(updateWordList)
+        listen(updateWordList);
     }, []);
-    console.log(wordList);
-
     const updateWordList = (newWords) => {
-        const wordArray = newWords.split(' ');
-        console.log(wordArray);
-        setWordList(newWords);
+        console.log(newWords);
+        setWordList((wordList) => getNewWordList(wordList, newWords));
     }
+    console.log(wordList);
 
     return (
         <div id="homePage">
             <p>DJ SUPO</p>
+            <YoutubePlayer />
         </div>
     )
 }
