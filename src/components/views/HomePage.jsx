@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { listen } from '../../services/micListener';
 import {calculateNewValue} from "@testing-library/user-event/dist/utils";
+import YoutubePlayer from '../YoutubePlayer';
 
 const HomePage = (props) => {
     const [ wordList, setWordList ] = useState([])
@@ -18,6 +19,7 @@ const HomePage = (props) => {
     return (
         <div id="homePage">
             <img src="/djlogo.png" alt="logo" />
+            {/* <YoutubePlayer query="joop" /> */}
         </div>
     )
 }
