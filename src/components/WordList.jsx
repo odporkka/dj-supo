@@ -1,5 +1,4 @@
 import React from 'react';
-import { wordListToString } from "../services/transcriptService";
 
 const WordList = (props) => {
     const { wordList } = props;
@@ -17,7 +16,6 @@ const WordList = (props) => {
                     </span>
                 ))}
             </p>
-
         </div>
     )
 }

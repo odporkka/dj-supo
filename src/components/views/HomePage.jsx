@@ -1,13 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import { listen } from '../../services/micListener';
-import { getNewWordList, getMostUsedWord } from '../../services/transcriptService';
+import React, { useEffect, useState } from "react";
+import { listen } from "../../services/micListener";
+import {
+  askNotificationPermission,
+  postNotification,
+} from "../../services/notificationService";
+import {
+  getNewWordList,
+  getMostUsedWord,
+} from "../../services/transcriptService";
 import YoutubePlayer from "../YoutubePlayer";
 import WordList from "../WordList";
 
 const HomePage = () => {
     const [ wordList, setWordList ] = useState(undefined)
     useEffect(() => {
+        askNotificationPermission();
         listen(updateWordList);
+        setTimeout(() => {
+            postNotification("Nice music taste mate");
+        }, 1000);
     }, []);
     const updateWordList = (newWords) => {
         console.log(newWords);
