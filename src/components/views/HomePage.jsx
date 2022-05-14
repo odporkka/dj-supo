@@ -25,9 +25,11 @@ const HomePage = () => {
 
     return (
         <div id="homePage" className="container">
-            <div className="row" style={{ background: 'white' }}>
+            <div className="row">
                 <div className="col">
-                    <h1>DJ SUPO</h1>
+                    { !wordList &&
+                        <h1>DJ SUPO</h1>
+                    }
                 </div>
             </div>
             <div className="row">
