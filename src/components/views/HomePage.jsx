@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { listen } from '../../services/micListener';
-import { getNewWordList } from '../../services/transcriptService';
+import { getNewWordList, getMostUsedWord } from '../../services/transcriptService';
 import YoutubePlayer from "../YoutubePlayer";
 
 const HomePage = (props) => {
-    const [ wordList, setWordList ] = useState({})
+    const [ wordList, setWordList ] = useState(undefined)
     useEffect(() => {
         listen(updateWordList);
     }, []);
@@ -18,7 +18,9 @@ const HomePage = (props) => {
         <div id="homePage">
             <p>DJ SUPO</p>
             <img src="/djlogo.png" alt="logo" />
-             <YoutubePlayer query="joop" />
+            { wordList &&
+                <YoutubePlayer query={getMostUsedWord(wordList, setWordList)} />
+            }
         </div>
     )
 }

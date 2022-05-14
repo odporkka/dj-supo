@@ -13,6 +13,13 @@ const getNewWordList = (wordList, newWords) => {
     return newWordList;
 };
 
+const getMostUsedWord = (wordList) => {
+    const wordArray = Object.entries(wordList).sort((a, b) => (b[1]-a[1]));
+    console.log(wordArray);
+    return wordArray[0][0];
+}
+
 module.exports = {
-    getNewWordList
+    getNewWordList,
+    getMostUsedWord,
 };
