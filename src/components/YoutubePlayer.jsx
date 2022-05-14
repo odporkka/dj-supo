@@ -5,13 +5,13 @@ const randomSentences = [
   "I like $$ too",
   "I listen to $$ in my van all the time!",
   "OMG $$ is banger",
-  "nice taste bro"
+  "nice taste bro",
 ];
 
 const getFBIGuySentence = (query) => {
   const item =
     randomSentences[Math.floor(Math.random() * randomSentences.length)];
-  return item.replace("$$", query);
+  return item.replace("$$", query ?? "this song");
 };
 
 export default function ({ query }) {
@@ -29,8 +29,9 @@ export default function ({ query }) {
     })();
     console.log(getFBIGuySentence(query));
     setTimeout(() => {
-      postNotification(getFBIGuySentence(query
-        ));
+      if (query) {
+        postNotification(getFBIGuySentence(query));
+      }
     }, 1000);
   }, [query]);
 
