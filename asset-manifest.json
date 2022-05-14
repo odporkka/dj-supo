@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/dj-supo/static/js/main.84279b92.js",
+    "static/js/787.6963e095.chunk.js": "/dj-supo/static/js/787.6963e095.chunk.js",
+    "index.html": "/dj-supo/index.html",
+    "main.84279b92.js.map": "/dj-supo/static/js/main.84279b92.js.map",
+    "787.6963e095.chunk.js.map": "/dj-supo/static/js/787.6963e095.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.84279b92.js"
+  ]
+}
