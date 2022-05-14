@@ -17,7 +17,8 @@ const HomePage = (props) => {
     return (
         <div id="homePage">
             <p>DJ SUPO</p>
-            <YoutubePlayer />
+            <img src="/djlogo.png" alt="logo" />
+             <YoutubePlayer query="joop" />
         </div>
     )
 }

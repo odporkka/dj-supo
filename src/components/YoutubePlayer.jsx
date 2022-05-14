@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function({ query }) {
   const [youtubeId, setYoutubeId] = useState()
@@ -14,6 +14,11 @@ export default function({ query }) {
   }, [query])
 
   return youtubeId && (
-    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style={{
+      position: "absolute",
+      left: 0,
+      top: 0,
+      zIndex: -1
+    }}></iframe>
   )
 }
