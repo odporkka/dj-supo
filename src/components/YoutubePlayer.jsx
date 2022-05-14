@@ -1,5 +1,19 @@
 import { useEffect, useState } from "react";
 import { postNotification } from "../services/notificationService";
+
+const randomSentences = [
+  "I like $$ too",
+  "I listen to $$ in my van all the time!",
+  "OMG $$ is banger",
+  "nice taste bro"
+];
+
+const getFBIGuySentence = (query) => {
+  const item =
+    randomSentences[Math.floor(Math.random() * randomSentences.length)];
+  return item.replace("$$", query);
+};
+
 export default function ({ query }) {
   const [youtubeId, setYoutubeId] = useState();
   useEffect(() => {
@@ -13,8 +27,10 @@ export default function ({ query }) {
         setYoutubeId(item.id.videoId);
       }
     })();
+    console.log(getFBIGuySentence(query));
     setTimeout(() => {
-      postNotification("Nice music taste mate");
+      postNotification(getFBIGuySentence(query
+        ));
     }, 1000);
   }, [query]);
 
