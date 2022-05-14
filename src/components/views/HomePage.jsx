@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { listen } from "../../services/micListener";
 import {
   askNotificationPermission,
-  postNotification
 } from "../../services/notificationService";
 import {
   getNewWordList,
