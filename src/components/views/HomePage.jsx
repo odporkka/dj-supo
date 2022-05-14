@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { listen } from "../../services/micListener";
 import {
   askNotificationPermission,
-  postNotification,
 } from "../../services/notificationService";
 import {
   getNewWordList,
@@ -15,9 +14,6 @@ const HomePage = (props) => {
   useEffect(() => {
     askNotificationPermission();
     listen(updateWordList);
-    setTimeout(() => {
-      postNotification("Nice music taste mate");
-    }, 1000);
   }, []);
   const updateWordList = (newWords) => {
     console.log(newWords);
