@@ -27,7 +27,7 @@ export default function ({ query }) {
         setYoutubeId(item.id.videoId);
       }
     })();
-    console.log(getFBIGuySentence(query));
+    console.log(query);
     setTimeout(() => {
       if (query) {
         postNotification(getFBIGuySentence(query));

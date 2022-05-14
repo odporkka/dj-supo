@@ -16,9 +16,6 @@ const HomePage = () => {
     useEffect(() => {
         askNotificationPermission();
         listen(updateWordList);
-        setTimeout(() => {
-            postNotification("Nice music taste mate");
-        }, 1000);
     }, []);
     const updateWordList = (newWords) => {
         console.log(newWords);
